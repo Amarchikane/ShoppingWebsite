@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" routerLink="/Home">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " routerLinkActive="navActive" aria-current="page" routerLink="/Home" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="About">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="Product">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="navActive" routerLink="Contact">Contact</a>
+        </li>
+      </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        John Doe
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item dropdown" routerLink="login"> Login </a>
+        <a class="dropdown-item" routerLink="Signup" > Signup</a>
+        <!-- <a class="dropdown-item" >  profile page </a> -->
+        <!-- <a class="dropdown-item" >  profile page </a> -->
+      </div>
+    </li>
+  </ul>
+    </div>
+  </div>
+</nav>
+<div style="margin-top: 60px;"></div>

@@ -1,0 +1,44 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-md-2 bg-light d-flex flex-column sidebar ">
+
+
+          <input class="form-control me-2" type="search" placeholder="Search products" aria-label="Search"
+            [(ngModel)]="searchTerm" (keyup)="filterProductsOnsearch(searchTerm)" list="suggestions">
+            <datalist id="suggestions">
+              <option  *ngFor="let sug of Suggestion" value={{sug}}>{{sug}}</option>
+            </datalist>
+          <button class="btn btn-outline-success" (click)="onSubmit()" type="submit">Search</button>
+
+
+<ul><p class="bgchange" style="width: 100% !important;display: block;" (click)="filterProduct()"> Vew All</p></ul>
+        <ul  *ngFor="let category of category">
+          <p class="bgchange" style="width: 100% !important;display: block;" (click)="filterProducts(category)">{{category}}</p>
+
+      </ul>
+
+
+    </div>
+    <div class="col-md-10 main-content">
+      <div class="p-1" style="float: right;">
+          <select [(ngModel)]="selectedSort" (change)="sortProducts(selectedSort)">
+            <option value="name" selected>Sort by Name</option>
+            <option value="nameacc" selected>Sort by Name</option>
+
+            <option value="priceAss">Sort by Price high to Low</option>
+            <option value="price">Sort by Price Low to high</option>
+          </select>
+          </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <div class="row" style="width: -webkit-fill-available;">
+        <div class="col-sm-3 filterDiv2 red show card-top-width-screen" *ngFor="let product of product">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,37 @@
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 768px) {
+
+  /* For desktop: */
+  .img-top-width-screen {
+    width: 273px;
+    height: 150px;
+  }
+
+  .card-top-width-screen {
+    width: 299px;
+    height: 441px;
+  }
+
+  .fix-width-card {
+    height: 421px;
+  }
+
+}
+
+
+
+
+
+.checked {
+  color: orange;
+}
+
+.zoom-effect {
+  transition: transform 0.3s;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+  /* Adjust the scale factor as needed */
+}

@@ -1,0 +1,57 @@
+
+  <section >
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="container mt-5" *ngFor="let product of product">
+      <div class="row gx-4 gx-lg-5 align-items-center">
+    <div class="col-md-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src={{product.thumbnail}} class="d-block w-100 phone-image imgcustomheights" alt="">
+          </div>
+          <div class="carousel-item" *ngFor="let productImg of product.images">
+            <img src={{productImg}} class="d-block w-100 phone-image imgcustomheights" alt="Image 2">
+          </div>
+          <!-- Add more carousel items for additional angles -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+     <div class="col-md-6">
+      <div class="small fs-5 fw-bolder">{{product.brand}}</div>
+      <h1 class="display-5 fw-bolder">{{product.title}}</h1>
+      <div>
+        <div class="fs-5">
+          <strong>Price:</strong> &nbsp;&nbsp;
+          <span >&#8377;{{discountcalculater(product.price,product.discountPercentage)}}</span>&nbsp;
+          <span class="text-decoration-line-through">List Price:&nbsp;&#8377;{{product.price}}</span>
+        </div>
+      </div><div class="fs-5">
+      <p><strong>You Save: &nbsp;</strong>&#8377;{{discountreminder(product.price,product.discountPercentage)}} ({{product.discountPercentage}}%)</p>
+      </div>
+      <p><strong>Description:</strong> {{product.description}}</p>
+      <p><strong>Rating:</strong> {{product.rating}}</p>
+      <p><strong>Stock:</strong> {{product.stock}}</p>
+      <p><strong>Brand:</strong> {{product.brand}}</p>
+      <p><strong>category:</strong> {{product.category}}</p>
+        <div class="d-flex">
+          <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 5rem" />
+            <button class="btn btn-danger btn-block">ADD to cart</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+  </section>
+<app-related-products [Relatedproduct]="Relatedproduct"></app-related-products>
+
+
